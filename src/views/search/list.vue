@@ -1,12 +1,12 @@
 <template>
   <div class="search">
-    <van-nav-bar fixed title="商品列表" left-arrow @click-left="$router.go(-1)" />
+    <van-nav-bar fixed title="菜品列表" left-arrow @click-left="$router.go(-1)" />
 
     <van-search
       readonly
       shape="round"
       background="#ffffff"
-      :value="querySearch || '搜索商品'"
+      :value="querySearch || '搜索菜品'"
       show-action
       @click="$router.push('/search')"
     >
@@ -18,7 +18,6 @@
     <!-- 排序选项按钮 -->
     <div class="sort-btns">
       <div class="sort-item">综合</div>
-      <div class="sort-item">销量</div>
       <div class="sort-item">价格 </div>
     </div>
 

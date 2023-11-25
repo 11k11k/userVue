@@ -55,14 +55,7 @@
         <van-icon name="clock-o" />
         <span>待支付</span>
       </div>
-      <div class="order-navbar-item" @click="$router.push('/myorder?dataType=delivery')">
-        <van-icon name="logistics" />
-        <span>待发货</span>
-      </div>
-      <div class="order-navbar-item" @click="$router.push('/myorder?dataType=received')">
-        <van-icon name="send-gift-o" />
-        <span>待收货</span>
-      </div>
+
     </div>
 
     <div class="service">
@@ -90,7 +83,7 @@
         </div>
         <div class="content-item">
           <van-icon name="refund-o" />
-          <span>退换/售后</span>
+          <span>客服/售后</span>
         </div>
       </div>
     </div>

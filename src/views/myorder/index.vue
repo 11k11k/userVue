@@ -1,11 +1,8 @@
 <template>
   <div class="order">
-    <van-nav-bar title="我的订单" left-arrow @click-left="$router.go(-1)" />
+    <van-nav-bar title="历史订单" left-arrow @click-left="$router.go(-1)" />
     <van-tabs v-model="active" sticky>
       <van-tab name="all" title="全部"></van-tab>
-      <van-tab name="payment" title="待支付"></van-tab>
-      <van-tab name="delivery" title="待发货"></van-tab>
-      <van-tab name="received" title="待收货"></van-tab>
       <van-tab name="comment" title="待评价"></van-tab>
     </van-tabs>
 

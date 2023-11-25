@@ -1,15 +1,11 @@
 <template>
-    <div>
-        <van-address-list
-        v-model="chosenAddressId"
-        :list="list"
-        :disabled-list="disabledList"
-        disabled-text="以下地址超出配送范围"
-        add-button-text="新增地址"
-        @add="onAdd"
-        @edit="onEdit"
-      />
-          <!-- <div class="info">
+  <div>
+    <van-nav-bar fixed title="菜品详情页" left-arrow @click-left="$router.go(-1)" />
+
+    <van-address-list  class='top' v-model="chosenAddressId" :list="list" :disabled-list="disabledList" disabled-text="以下地址超出配送范围"
+      add-button-text="新增地址" @add="onAdd" @edit="onEdit" />
+
+    <!-- <div class="info">
             <div class="info-content">
               <span class="name">{{selectAddress.name}}</span>
               <span class="mobile">{{ selectAddress.phone }}</span>
@@ -19,13 +15,13 @@
             </div>
           </div> -->
 
-    </div>
-
+  </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 import { Toast } from 'vant'
+
 export default {
   name: 'AddressMan',
   created () {
@@ -40,7 +36,7 @@ export default {
 
     // 确保数据不为 undefined，否则进行适当的处理
     if (id !== undefined && name !== undefined && tel !== undefined) {
-    // 进行其他操作...
+      // 进行其他操作...
       console.log('shibai')
     }
   },
@@ -122,4 +118,8 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style scoped>
+.top{
+  padding-top: 46px;
+}
+</style>

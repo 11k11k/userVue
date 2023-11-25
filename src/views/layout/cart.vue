@@ -1,9 +1,9 @@
 <template>
   <div class="cart">
-    <van-nav-bar title="购物车" fixed />
+    <van-nav-bar title="餐桌" fixed />
     <div v-if="isLogin && cartList.length > 0">
       <div class="cart-title">
-        <span class="all">共<i>{{ cartTotal }}</i>件商品</span>
+        <span class="all">共<i>{{ cartTotal }}</i>份菜品</span>
         <span class="edit" @click="isEdit = !isEdit">
           <van-icon name="edit" />
           编辑
@@ -41,7 +41,7 @@
             <span>合计：</span>
             <span>¥ <i class="totalPrice">{{ selPrice }}</i></span>
           </div>
-          <div @click="goPay" v-if="!isEdit" class="goPay" :class="{ disabled: selCount === 0 }">结算({{ selCount }})</div>
+          <div @click="goPay" v-if="!isEdit" class="goPay" :class="{ disabled: selCount === 0 }">买单({{ selCount }})</div>
           <div v-else @click="handleDel" class="delete" :class="{ disabled: selCount === 0 }">删除({{ selCount }})</div>
         </div>
       </div>
@@ -133,6 +133,7 @@ export default {
 
 <style lang="less" scoped>
 // 主题 padding
+
 .cart {
   padding-top: 46px;
   padding-bottom: 100px;

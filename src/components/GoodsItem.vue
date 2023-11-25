@@ -7,7 +7,7 @@
       <p class="tit text-ellipsis-2">
         {{ item.goods_name }}
       </p>
-      <p class="count">已售 {{ item.goods_sales }} 件</p>
+      <p class="count">已售 {{ item.goods_sales }} 份</p>
       <p class="price">
         <span class="new">¥{{ item.goods_price_min }}</span>
         <span class="old">¥{{ item.goods_price_max }}</span>

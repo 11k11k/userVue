@@ -1,6 +1,6 @@
 <template>
   <div class="pay">
-    <van-nav-bar fixed title="订单结算台" left-arrow @click-left="$router.go(-1)" />
+    <van-nav-bar fixed title="订单结算" left-arrow @click-left="$router.go(-1)" />
 
     <!-- 地址相关 -->
     <div class="address" @click="addressName">
@@ -48,7 +48,7 @@
       </div>
 
       <div class="flow-num-box">
-        <span>共 {{ order.orderTotalNum }} 件商品，合计：</span>
+        <span>共 {{ order.orderTotalNum }} 件菜品，合计：</span>
         <span class="money">￥{{ order.orderTotalPrice }}</span>
       </div>
 

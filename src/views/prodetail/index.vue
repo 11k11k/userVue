@@ -1,6 +1,6 @@
 <template>
   <div class="prodetail">
-    <van-nav-bar fixed title="商品详情页" left-arrow @click-left="$router.go(-1)" />
+    <van-nav-bar fixed title="菜品详情页" left-arrow @click-left="$router.go(-1)" />
 
     <van-swipe :autoplay="3000" @change="onChange">
       <van-swipe-item>
@@ -26,20 +26,14 @@
       </div>
 
       <div class="service">
-        <div class="left-words">
-          <span><van-icon name="passed" />七天无理由退货</span>
-          <span><van-icon name="passed" />48小时发货</span>
-        </div>
-        <div class="right-icon">
-          <van-icon name="arrow" />
-        </div>
+
       </div>
     </div>
 
     <!-- 商品评价 -->
     <div class="comment">
       <div class="comment-title">
-        <div class="left">商品评价 ({{ total }}条)</div>
+        <div class="left">菜品评价 ({{ total }}条)</div>
         <div class="right">查看更多 <van-icon name="arrow" /> </div>
       </div>
       <div class="comment-list">
@@ -59,26 +53,21 @@
       </div>
     </div>
 
-    <!-- 商品描述 -->
-    <div class="desc"  v-html="detailList.content">
-
-    </div>
-
     <!-- 底部 -->
     <div class="footer">
       <div @click="$router.push('/')" class="icon-home">
         <van-icon name="wap-home-o" />
-        <span>首页</span>
+        <span>菜单</span>
       </div>
       <div @click="$router.push('/cart')" class="icon-cart">
         <span v-if="cartTotal > 0" class="num">{{ cartTotal }}</span>
         <van-icon name="shopping-cart-o" />
-        <span>购物车</span>
+        <span>餐桌</span>
       </div>
-      <div class="btn-add" @click="addFn">加入购物车</div>
-      <div class="btn-buy" @click="buyNow">立刻购买</div>
+      <div class="btn-add" @click="addFn">加入餐桌</div>
+      <div class="btn-buy" @click="buyNow">立刻下单</div>
     </div>
-    <van-action-sheet v-model="showPannel" :title="mode === 'cart' ? '加入购物车' : '立刻购买'">
+    <van-action-sheet v-model="showPannel" :title="mode === 'cart' ? '加入餐桌' : '立刻下单'">
       <div class="product">
         <div class="product-title">
           <div class="left">
@@ -90,8 +79,8 @@
               <span class="nowprice">{{ detailList.goods_price_max }}</span>
             </div>
             <div class="count">
-              <span>库存</span>
-              <span>{{detailList.stock_total}}</span>
+              <span></span>
+
             </div>
           </div>
         </div>
@@ -100,10 +89,10 @@
         </div>
 
         <div class="showbtn" v-if="detailList.stock_total>0">
-          <div class="btn" v-if="mode==='cart'" @click="addCart">加入购物车</div>
+          <div class="btn" v-if="mode==='cart'" @click="addCart">加入餐桌</div>
           <div  class="btn now" v-else @click="byNow">立刻购买</div>
         </div>
-        <div class="btn-none" v-else>该商品已抢完</div>
+        <div class="btn-none" v-else>该菜品已卖完</div>
       </div>
     </van-action-sheet>
   </div>
@@ -183,7 +172,7 @@ export default {
       const { data } = await getCate(this.getGoodsId, this.account, this.detailList.skuList[0].goods_sku_id)
       // console.log(this.detailList.skuList[0].goods_sku_id)
       this.cartTotal = data.cartTotal
-      this.$toast('加入购物车')
+      this.$toast('加入餐桌')
       this.showPannel = false
       // console.log(this.cartTotal)
     },
@@ -336,7 +325,7 @@ export default {
       line-height: 36px;
       width: 120px;
       border-radius: 18px;
-      background-color: #ffa900;
+      background-color: #FFA500;
       text-align: center;
       color: #fff;
       font-size: 14px;

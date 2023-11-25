@@ -1,5 +1,10 @@
 <template>
+
+  <div>
+    <van-nav-bar fixed title="菜品详情页" left-arrow @click-left="$router.go(-1)" />
+
     <van-address-edit
+    class="top"
     :area-list="areaList"
     show-postal:true
     show-delete:true
@@ -11,7 +16,8 @@
     @save="onSave"
     @delete="onDelete"
     @change-detail="onChangeDetail"
-  />
+  /></div>
+
 </template>
 
 <script>
@@ -50,5 +56,8 @@ export default {
 
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+.top{
+  padding-top: 46px;
+}
 </style>

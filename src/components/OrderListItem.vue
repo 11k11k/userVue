@@ -21,12 +21,12 @@
           </div>
         </div>
         <div class="total">
-          共 {{ item.total_num }} 件商品，总金额 ¥{{ item.total_price }}
+          共 {{ item.total_num }} 份，总金额 ¥{{ item.total_price }}
         </div>
         <div class="actions">
           <div v-if="item.order_status === 10">
             <span v-if="item.pay_status === 10">立刻付款</span>
-            <span v-else-if="item.delivery_status === 10">申请取消</span>
+
             <span v-else-if="item.delivery_status === 20 || item.delivery_status === 30">确认收货</span>
           </div>
           <div v-if="item.order_status === 30">
