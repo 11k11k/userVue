@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- 导航条 -->
-    <van-nav-bar title="智慧商城" fixed />
+    <van-nav-bar title="高档餐馆网上电子点菜系统" fixed />
 
     <!-- 搜索框 -->
     <van-search
@@ -12,31 +12,8 @@
       @click="$router.push('/search')"
     />
 
-    <!-- 轮播图 -->
-    <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-      <van-swipe-item v-for="item in bannerList" :key="item.imgUrl">
-        <img :src="item.imgUrl" alt="">
-      </van-swipe-item>
-    </van-swipe>
-
-    <!-- 导航 -->
-    <van-grid column-num="5" icon-size="40">
-      <van-grid-item
-        v-for="item in navList" :key="item.imgUrl"
-        :icon="item.imgUrl"
-        text="新品首发"
-        @click="$router.push('/category')"
-      />
-    </van-grid>
-
-    <!-- 主会场 -->
-    <div class="main">
-      <img src="@/assets/main.png" alt="">
-    </div>
-
     <!-- 猜你喜欢 -->
     <div class="guess">
-      <p class="guess-title">—— 猜你喜欢 ——</p>
 
       <div class="goods-list">
         <GoodsItem v-for="item in proList" :key="item.goods_id" :item="item"></GoodsItem>
@@ -82,7 +59,7 @@ export default {
 // 导航条样式定制
 .van-nav-bar {
   z-index: 999;
-  background-color: #c21401;
+  background-color: rgba(96, 101, 209);
   ::v-deep .van-nav-bar__title {
     color: #fff;
   }

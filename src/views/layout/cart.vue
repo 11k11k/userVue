@@ -50,9 +50,9 @@
     <div class="empty-cart" v-else>
       <img src="@/assets/empty.png" alt="">
       <div class="tips">
-        您的购物车是空的, 快去逛逛吧
+        还未添加菜品
       </div>
-      <div class="btn" @click="$router.push('/')">去逛逛</div>
+      <div class="btn" @click="$router.push('/')">点击去添加菜品</div>
     </div>
   </div>
 </template>
@@ -298,11 +298,11 @@ export default {
   }
 
   .btn {
-    width: 110px;
+    width: 130px;
     height: 32px;
     line-height: 32px;
     text-align: center;
-    background-color: #fa2c20;
+    background-color: #d6b77f;
     border-radius: 16px;
     color: #fff;
     display: block;
