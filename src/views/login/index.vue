@@ -1,6 +1,6 @@
 <template>
   <div class="login">
-    <van-nav-bar title="标题" right-text="按钮" left-arrow @click-left="$router.go(-1)"  />
+    <van-nav-bar title="登录页" right-text="" left-arrow @click-left="$router.go(-1)"  />
     <div class="container">
       <div class="title">
         <h3>手机号登录</h3>

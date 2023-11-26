@@ -142,7 +142,7 @@ export default {
   methods: {
     async getAddressList () {
       const { data: { list } } = await getAddressList()
-      // console.log(list)
+      console.log(list)
       this.addressList = list
     },
     async getOrderList () {

@@ -3,7 +3,7 @@
         <div class="tit">
           <div class="time">{{ item.create_time }}</div>
           <div class="status">
-            <span>{{ item.state_text }}</span>
+
           </div>
         </div>
         <div class="list" >

@@ -7,6 +7,7 @@ import Home from '@/views/layout/home.vue'
 import User from '@/views/layout/user.vue'
 import Cart from '@/views/layout/cart.vue'
 import Edit from '@/views/addressMan/edit.vue'
+
 // const store = () => import('@/store')
 import store from '@/store'
 

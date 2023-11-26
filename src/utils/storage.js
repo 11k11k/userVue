@@ -25,7 +25,17 @@ export const getSearch = () => {
 // 地址管理
 
 export const setAdd = (list) => {
-  return localStorage.setItem(ADD_INFO, JSON.stringify(list))
+  try {
+    if (Array.isArray(list)) {
+      // 将数据存储到本地存储
+      localStorage.setItem(ADD_INFO, JSON.stringify(list))
+      console.log('Data stored successfully:', list)
+    } else {
+      console.error('Invalid data format. Expected an array.')
+    }
+  } catch (error) {
+    console.error('Error storing data to localStorage:', error)
+  }
 }
 export const getAdd = () => {
   const defaultObj = []
