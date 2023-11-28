@@ -1,4 +1,5 @@
 import request from '@/utils/request'
+import req from '@/utils/jsonApi'
 export const getCate = (goodsId, goodsNum, goodsSkuId) => {
   return request.post('/cart/add', {
 
@@ -9,7 +10,7 @@ export const getCate = (goodsId, goodsNum, goodsSkuId) => {
   })
 }
 export const getCateList = () => {
-  return request.get('/cart/list', { timeout: 10000 })
+  return req.get('/cartList')
 }
 export const changeCount = (goodsId, goodsNum, goodsSkuId) => {
   return request.post('/cart/update', {

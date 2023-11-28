@@ -4,13 +4,7 @@
     <van-nav-bar title="高档餐馆网上电子点菜系统" fixed />
 
     <!-- 搜索框 -->
-    <van-search
-      readonly
-      shape="round"
-      background="#f1f1f2"
-      placeholder="请在此输入搜索关键词"
-      @click="$router.push('/search')"
-    />
+    <van-search readonly shape="round" background="#f1f1f2" placeholder="请在此输入搜索关键词" @click="$router.push('/search')" />
 
     <!-- 猜你喜欢 -->
     <div class="guess">
@@ -20,7 +14,7 @@
       </div>
     </div>
   </div>
-  </template>
+</template>
 
 <script>
 import GoodsItem from '@/components/GoodsItem.vue'
@@ -29,8 +23,6 @@ export default {
   name: 'homeIndex',
   data () {
     return {
-      navList: [],
-      bannerList: [],
       proList: []
 
     }
@@ -39,13 +31,9 @@ export default {
     GoodsItem
   },
   async created () {
-    const { data: { pageData } } = await getHomeData()
-    // console.log(pageData.items[1].data)
-    this.bannerList = pageData.items[1].data
-    this.navList = pageData.items[3].data
-    this.proList = pageData.items[6].data
+    const { items } = await getHomeData()
+    this.proList = items[0].data
   }
-
 }
 </script>
 
@@ -60,6 +48,7 @@ export default {
 .van-nav-bar {
   z-index: 999;
   background-color: rgba(96, 101, 209);
+
   ::v-deep .van-nav-bar__title {
     color: #fff;
   }
@@ -81,6 +70,7 @@ export default {
   text-align: center;
   background-color: #39a9ed;
 }
+
 .my-swipe .van-swipe-item img {
   width: 100%;
   height: 185px;

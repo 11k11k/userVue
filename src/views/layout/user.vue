@@ -63,27 +63,27 @@
       <div class="content">
         <div class="content-item">
           <van-icon name="records" />
-          <span>收货地址</span>
+          <span @click="$router.push('/addressMan')">收货地址</span>
         </div>
         <div class="content-item">
           <van-icon name="gift-o" />
-          <span>领券中心</span>
+          <span @click="$toast('想啥呢')">领券中心</span>
         </div>
         <div class="content-item">
           <van-icon name="gift-card-o" />
-          <span>优惠券</span>
+          <span @click="$toast('优惠不了一点')">优惠券</span>
         </div>
         <div class="content-item">
           <van-icon name="question-o" />
-          <span>我的帮助</span>
+          <span @click="$toast('没有帮助')">我的帮助</span>
         </div>
         <div class="content-item">
           <van-icon name="balance-o" />
-          <span>我的积分</span>
+          <span @click="$toast('还没做')">我的积分</span>
         </div>
         <div class="content-item">
           <van-icon name="refund-o" />
-          <span>客服/售后</span>
+          <span >客服/售后</span>
         </div>
       </div>
     </div>
@@ -95,6 +95,7 @@
 </template>
 
 <script>
+
 import { getUserInfoDetail } from '@/api/user.js'
 export default {
   name: 'UserPage',

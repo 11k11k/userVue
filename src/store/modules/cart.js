@@ -49,7 +49,6 @@ export default {
       const cartIds = selCartList.map(item => item.id)
       await delSelect(cartIds)
       Toast('删除成功')
-
       // 重新拉取最新的购物车数据 (重新渲染)
       context.dispatch('getCateListData')
     }

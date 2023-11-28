@@ -1,6 +1,7 @@
-import request from '@/utils/request'
+// import request from '@/utils/request'
+import req from '@/utils/jsonApi'
 export const getHomeData = () => {
-  return request.get('/page/detail', {
+  return req.get('/pageDetail', {
     params: {
       pageId: 0
     }

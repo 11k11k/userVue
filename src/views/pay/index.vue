@@ -183,7 +183,7 @@ export default {
       this.$router.replace('/myorder')
     },
     addressName () {
-      console.log('点击了地址')
+      // console.log('点击了地址')
       this.$router.push({
         path: '/addressMan',
         query: {
